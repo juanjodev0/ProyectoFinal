@@ -7,7 +7,7 @@ router.post('/', createField)
 router.get('/', getField)
 router.get('/:fieldId', getFieldById)
 router.put('/:fieldId', updateFieldById)
-router.get('/:fieldId', deleteFieldById)
+router.delete('/:fieldId', deleteFieldById)
 
 
 

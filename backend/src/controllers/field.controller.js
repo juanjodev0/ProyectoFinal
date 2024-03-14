@@ -3,7 +3,7 @@ export const createField = (req, res) => {
 }
 
 export const getField = (req, res) => {
-    res.json('get products')
+    res.json('get fields')
 }
 
 export const getFieldById = (req, res) => {
