@@ -2,9 +2,8 @@ import { Router } from 'express'
 
 const router = Router();
 
-router.get('/', (req, res)=>{
-
-})
+router.post('/signup')
+router.post('/signin')
 
 
 export default router;
