@@ -3,9 +3,15 @@ import sequelize from '../db/connection'
 
 
 // Definir los modelos de las tablas en la base de datos
-export const User = sequelize.define('User', {
+ const User = sequelize.define('users', {
+    user_id: {
+        type: DataTypes.INTEGER,
+        primaryKey: true,
+        autoIncrement: true
+    },
     username: {
         type: DataTypes.STRING,
+        unique: true,
         allowNull: false,
     },
     password: {
@@ -19,4 +25,8 @@ export const User = sequelize.define('User', {
     phone: {
         type: DataTypes.STRING,
     }
+}, {
+    timestamps: true,
 });
+
+export default User;

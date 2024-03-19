@@ -1,7 +1,12 @@
 import { DataTypes } from 'sequelize';
 import sequelize from '../db/connection'
 
-export const Reservation = sequelize.define('Reservation', {
+const Reservation = sequelize.define('reservations', {
+    reservation_id: {
+        type: DataTypes.INTEGER,
+        primaryKey: true,
+        autoIncrement: true
+    },
     date: {
         type: DataTypes.DATEONLY,
         allowNull: false,
@@ -14,4 +19,8 @@ export const Reservation = sequelize.define('Reservation', {
         type: DataTypes.TIME,
         allowNull: false,
     }
+}, {
+    timestamps: true,
 });
+
+export default Reservation;

@@ -1,7 +1,12 @@
 import { DataTypes } from 'sequelize';
 import sequelize from '../db/connection'
 
-export const Payment = sequelize.define('Payment', {
+const Payment = sequelize.define('payments', {
+    payment_id: {
+        type: DataTypes.INTEGER,
+        primaryKey: true,
+        autoIncrement: true
+    },
     amount: {
         type: DataTypes.DECIMAL(10, 2),
         allowNull: false,
@@ -12,4 +17,9 @@ export const Payment = sequelize.define('Payment', {
     payment_method: {
         type: DataTypes.STRING,
     }
+}, {
+    timestamps: true,
 });
+
+
+export  default Payment;

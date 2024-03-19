@@ -1,24 +1,26 @@
 // import { pool } from '../db.js'
 import { Request, Response } from 'express'
+import bcrypt from 'bcrypt'
+import User from '../models/user';
 
 
 
-export const createUser =  (req: Request, res: Response) => {
-    // const {username, password, email, phone } = req.body;
-    const { body } = req;
+export const createUser = async (req: Request, res: Response) => {
+    // const { username, password, email, phone } = req.body;
 
-    // const [rows] = await pool.query('INSERT INTO users (username, password, email, phone) VALUES (?, ?, ?, ?)', [username, password, email, phone])
-    // res.send({ 
-    //     user_id: rows.insertId,
-    //     username,
-    //     password,
-    //     email,
-    //     phone,
-    //  })
-    res.json({
-        message: "Created user",
-        body
-    })
+    // const hashedPassword =  await bcrypt.hash(password, 10)
+
+    // await User.create({
+    //     username: username,
+    //     password: hashedPassword, 
+    //     email: email,
+    //     phone: phone
+    // })
+
+    // res.json({
+    //     message: `Created user ${username}`,
+        
+    // })
 }
 
 export const loginUser = (req: Request, res: Response) => {
@@ -30,17 +32,26 @@ export const loginUser = (req: Request, res: Response) => {
     })
 }
 
-export const getUser = async(req: Request, res: Response) => {
-    // const [ rows ] = await pool.query('SELECT * FROM users')
-    // res.json(rows)
+
+//Obtenemos todos los usuarios
+export const getUsers = async(req: Request, res: Response) => {
+    const users = await User.findAll();
+    res.json(users)
 }
 
+
+//Obtenemos 1 usuario por su id
 export const getUserById = async(req: Request, res: Response) => {
-    // const [rows] = await pool.query('SELECT * FROM users WHERE user_id = ?', [req.params.user_id])
-    // if (rows.length <= 0) return res.status(404).json({
-    //     message: 'User not found'
-    // })
-    res.send('Get id success')
+    const { user_id } = req.params
+    const user = await User.findByPk( user_id )
+
+    if(user){
+        res.send(user)
+    }else {
+        res.status(404).json({
+            msg: `User ${ user_id } Not found`
+        })
+    }
     
 }
 

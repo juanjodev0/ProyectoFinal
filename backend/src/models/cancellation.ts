@@ -2,23 +2,22 @@ import { DataTypes } from 'sequelize';
 import sequelize from '../db/connection'
 
 
-const Feedback = sequelize.define('feedbacks', {
-    feedback_id: {
+const Payment = sequelize.define('cancellations', {
+    cancellation_id: {
         type: DataTypes.INTEGER,
         primaryKey: true,
         autoIncrement: true
     },
-    rating: {
-        type: DataTypes.INTEGER,
-    },
-    comment: {
+    reason: {
         type: DataTypes.TEXT,
+        allowNull: false
     },
     date: {
         type: DataTypes.DATEONLY,
+        allowNull: false
     }
 }, {
     timestamps: true,
 });
 
-export default Feedback;
+export default Payment;

@@ -1,7 +1,7 @@
 import { DataTypes } from 'sequelize'
 import sequelize from '../db/connection'
 
-export const Field = sequelize.define('field', {
+const Field = sequelize.define('fields', {
     field_id:{
         type: DataTypes.INTEGER,
         primaryKey: true,
@@ -20,5 +20,13 @@ export const Field = sequelize.define('field', {
     },
     available_hours: {
         type: DataTypes.STRING,
+    },
+    image_field: {
+        type: DataTypes.BLOB('long'),
+        allowNull: true,
     }
+}, {
+    timestamps: true,
 })
+
+export default Field;
