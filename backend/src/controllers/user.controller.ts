@@ -1,26 +1,27 @@
 // import { pool } from '../db.js'
 import { Request, Response } from 'express'
-import bcrypt from 'bcrypt'
+// import bcrypt from 'bcrypt'
 import User from '../models/user';
 
 
 
 export const createUser = async (req: Request, res: Response) => {
-    // const { username, password, email, phone } = req.body;
+    const { username, password, email, phone } = req.body;
+    
+    // //Password encripted
+    // const hashedPassword = await bcrypt.hash(password, 10);
 
-    // const hashedPassword =  await bcrypt.hash(password, 10)
-
-    // await User.create({
-    //     username: username,
-    //     password: hashedPassword, 
-    //     email: email,
-    //     phone: phone
-    // })
+    await User.create({
+        username, 
+        password,
+        email, 
+        phone
+    })
 
     // res.json({
-    //     message: `Created user ${username}`,
-        
+    //     msg: `Usuario`
     // })
+
 }
 
 export const loginUser = (req: Request, res: Response) => {

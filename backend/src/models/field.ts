@@ -15,7 +15,7 @@ const Field = sequelize.define('fields', {
         type: DataTypes.STRING,
     },
     price_per_hour: {
-        type: DataTypes.DECIMAL(10, 2),
+        type: DataTypes.DECIMAL(10, 3),
         allowNull: false,
     },
     available_hours: {

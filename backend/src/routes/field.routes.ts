@@ -5,9 +5,9 @@ const router = Router();
 
 router.post('/', createField)
 router.get('/', getField)
-router.get('/:fieldId', getFieldById)
-router.put('/:fieldId', updateFieldById)
-router.delete('/:fieldId', deleteFieldById)
+router.get('/:field_id', getFieldById)
+router.put('/:field_id', updateFieldById)
+router.delete('/:field_id', deleteFieldById)
 
 
 

@@ -1,6 +1,7 @@
 import express, { Application } from 'express';
 import routesField from '../routes/field.routes'
 import routesUser from '../routes/user.routes'
+import morgan from 'morgan';
 import Field from './field';
 import User from './user';
 
@@ -32,6 +33,7 @@ class Server {
     }
 
     midlewares(){
+        this.app.use(morgan('combined'));
         this.app.use(express.json())  // Parse incoming requests with
     }
     async dbConnect(){
