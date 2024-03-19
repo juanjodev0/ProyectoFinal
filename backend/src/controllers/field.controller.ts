@@ -3,6 +3,17 @@ import Field  from '../models/field'
 
 
 export const createField = (req: Request, res: Response) => {
+    const { field_name, surface_type, price_per_hour, available_hours, image_field } = req.body;
+
+    console.log(field_name)
+    console.log(surface_type)
+    console.log(price_per_hour)
+    console.log(available_hours)
+    console.log(image_field)
+
+    res.json({
+        msg: 'new Field'
+    })
 
 }
 
