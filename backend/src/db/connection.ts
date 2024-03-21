@@ -2,7 +2,6 @@
 import{ Sequelize } from 'sequelize';
 
 import dotenv from 'dotenv'
-
 dotenv.config()
 
 // Configuración de la conexión a la base de datos

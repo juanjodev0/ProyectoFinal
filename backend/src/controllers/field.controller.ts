@@ -2,27 +2,41 @@ import { Request, Response } from 'express'
 import Field  from '../models/field'
 
 
-export const createField = (req: Request, res: Response) => {
+export const createField = async(req: Request, res: Response) => {
+
     const { field_name, surface_type, price_per_hour, available_hours, image_field } = req.body;
 
-    console.log(field_name)
-    console.log(surface_type)
-    console.log(price_per_hour)
-    console.log(available_hours)
-    console.log(image_field)
-
-    res.json({
-        msg: 'new Field'
-    })
+    try {
+        //We save field in the database - guardamos canchas en la base de datos
+        await Field.create({
+            field_name,
+            surface_type,
+            price_per_hour,
+            available_hours,
+            image_field
+        })
+    
+        res.json({
+            msg: `User ${field_name} created`
+        })
+    } catch (error) {
+        res.status(400).json({
+            msg: `Ups an error occurred`
+        })
+    }
 
 }
 
-//Obtener todas las canchas
+//Obtain all the fields - Obtener todas las canchas
 export const getField = async (req: Request, res: Response) => {
-    const listFields = await Field.findAll();
-
- 
-    res.json(listFields)
+    try {
+        const listFields = await Field.findAll();
+        res.json(listFields)
+    } catch (error) {
+        res.json({
+            msg: error
+        })
+    }
 }
 
 
@@ -40,10 +54,33 @@ export const getFieldById = async (req: Request, res: Response) => {
     }
 }
 
-export const updateFieldById = (req: Request, res: Response) => {
+
+//Update all the data of the soccer field - Actualizar todos los datos de la cancha de fútbol
+export const updateFieldById = async(req: Request, res: Response) => {
+
+    const { field_id } = req.params
+    const { body } = req
+    try {
+        const fieldUpdate = await Field.findByPk( field_id );
+        if (!fieldUpdate){
+            return res.status(404).json({
+                msg: `there is no field with the id ${field_id}`
+            })
+        }
+
+        await fieldUpdate.update( body )
+        res.json(fieldUpdate)
+
+    } catch (error) {
+        res.status(404).json({
+            msg: 'ups could not update the field'
+        })
+    }
     
 }
 
+
+//Delete the soccer field - Eliminar la cancha de fútbol
 export const deleteFieldById = (req: Request, res: Response) => {
     
 }

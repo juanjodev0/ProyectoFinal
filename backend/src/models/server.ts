@@ -1,6 +1,7 @@
 import express, { Application } from 'express';
 import routesField from '../routes/field.routes'
 import routesUser from '../routes/user.routes'
+import authUser from '../routes/auth.routes'
 import morgan from 'morgan';
 import Field from './field';
 import User from './user';
@@ -30,10 +31,12 @@ class Server {
     routes(){
         this.app.use('/api/fields', routesField)
         this.app.use('/api/users', routesUser)
+        this.app.use('/api/users', authUser)
+
     }
 
     midlewares(){
-        this.app.use(morgan('combined'));
+        this.app.use(morgan('dev'));
         this.app.use(express.json())  // Parse incoming requests with
     }
     async dbConnect(){
