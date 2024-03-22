@@ -1,7 +1,10 @@
+import React from 'react';
+import ResDetails from '../components/reservation-details.jsx';
+
 const ReservationDetails = () => {
     return (
       <div>
-        <h1>ReservationDetails</h1>
+        <ResDetails />
       </div>
     )
   }
