@@ -9,7 +9,7 @@ const TeamsForm = () =>{
 
     return(
         <div className={centrado}>
-            <div className='w-4/5 mb-10 p-4 rounded-3xl shadow-xl bg-gray-400'>
+            <div className='w-4/5 mb-10 p-4 rounded-3xl shadow-xl'>
                 <div className={`${centrado} mb-8`}>
                     <img className='h-16 flex justify-center content-center' src={logoGoat} alt='logo Goat' />
                 </div>
