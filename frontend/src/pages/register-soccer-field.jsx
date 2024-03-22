@@ -1,7 +1,10 @@
+import React from 'react';
+import SoccerFieldForm from '../components/soccer-field-form.jsx';
+
 const RegisterSoccerField = () => {
     return (
       <div>
-        <h1>RegisterSoccerField</h1>
+        <SoccerFieldForm />
       </div>
     )
   }

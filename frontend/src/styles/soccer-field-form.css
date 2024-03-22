@@ -1,0 +1,34 @@
+
+@media screen and (max-width: 1000px) {
+    .container-secondary{
+        flex-direction: column;
+    }
+
+    .container-form{
+        max-width: 60%;   
+    }
+
+  }
+
+  @media screen and (max-width: 600px) {
+    .container-third{
+        padding-left: 20px;
+    }
+    
+    .container-small{
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        justify-content: center;
+    }
+
+    .container-form{
+        flex-direction: column;
+        align-content: center;
+        justify-content: center;
+    }
+
+    .container-form-img{
+        max-width: 65%; 
+    }
+  }

@@ -1,7 +1,10 @@
+import React from 'react';
+import TeamsForm from '../components/teams-form.jsx';
+
 const ReservationForm = () => {
     return (
       <div>
-        <h1>ReservationForm</h1>
+        <TeamsForm />
       </div>
     )
   }
