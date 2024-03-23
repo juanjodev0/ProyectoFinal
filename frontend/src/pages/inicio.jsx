@@ -1,98 +1,102 @@
 const Inicio = () => {
   return (
     <div>
-     <section className="text-gray-600 body-font">
-  <div className="container px-5 py-24 mx-auto">
-    <div className="flex flex-wrap -m-4">
-      <div className="p-4 md:w-1/3">
-        <div className="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
-          <img className="lg:h-48 md:h-36 w-full object-cover object-center" src="https://dummyimage.com/720x400" alt="blog"></img>
-          <div className="p-6">
-            <h2 className="tracking-widest text-xs title-font font-medium text-gray-400 mb-1">CATEGORY</h2>
-            <h1 className="title-font text-lg font-medium text-gray-900 mb-3">The Catalyzer</h1>
-            <p className="leading-relaxed mb-3">Photo booth fam kinfolk cold-pressed sriracha leggings jianbing microdosing tousled waistcoat.</p>
-            <div className="flex items-center flex-wrap ">
-              <a className="text-indigo-500 inline-flex items-center md:mb-2 lg:mb-0">Learn More
-                <svg className="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M5 12h14"></path>
-                  <path d="M12 5l7 7-7 7"></path>
-                </svg>
-              </a>
-              <span className="text-gray-400 mr-3 inline-flex items-center lg:ml-auto md:ml-0 ml-auto leading-none text-sm pr-3 py-1 border-r-2 border-gray-200">
-                <svg className="w-4 h-4 mr-1" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
-                  <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
-                  <circle cx="12" cy="12" r="3"></circle>
-                </svg>1.2K
-              </span>
-              <span className="text-gray-400 inline-flex items-center leading-none text-sm">
-                <svg className="w-4 h-4 mr-1" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
-                  <path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"></path>
-                </svg>6
-              </span>
-            </div>
-          </div>
-        </div>
+      <section className="bg-[url('background-principal.png')] bg-contain text-white body-font">
+  <div className="container px-5 py-20 mx-auto">
+    <div className="flex flex-col text-center w-full mb-20">
+      <h1 className="sm:text-5xl text-7xl font-medium title-font mt-4 mb-4 poppins-bold text-white">Juega Como Profesional</h1>
+      <p className="lg:w-2/3 text-2xl	 mx-auto poppins-regular leading-relaxed">En cualquier parte de Colombia</p>
+      <button className="flex mx-auto mt-2 text-white bg-gradient-to-r rounded-3xl from-primary to-secundary border-0 py-1 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg poppins-regular">Reserva ahora</button>
+    </div>
+    <div className="bg flex flex-wrap bg-black rounded-3xl bg-opacity-40">
+      <div className="xl:w-1/3 lg:w-1/2 md:w-full 3x-8 py-4 pl-14 ml-00 border-gray-200 border-opacity-60">
+      <a className="inline-flex items-center">
+          <img alt="blog" src="caracteristicas1.png" className="w-24 h-12 rounded-full flex-shrink-0 object-cover object-center"></img>
+          <span className="flex-grow flex flex-col">
+            <p className="text-xl -mb-1 title-font text-left font-medium text-white poppins-regular">Rapidez</p>
+            <p className="text-base	mt-1 text-white text-left t poppins-regular">Reserva tu cancha en segundos,<br></br>
+sin llamadas ni filas.  </p>
+          </span>
+        </a>
       </div>
-      <div className="p-4 md:w-1/3">
-        <div className="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
-          <img className="lg:h-48 md:h-36 w-full object-cover object-center" src="https://dummyimage.com/721x401" alt="blog"></img>
-          <div className="p-6">
-            <h2 className="tracking-widest text-xs title-font font-medium text-gray-400 mb-1">CATEGORY</h2>
-            <h1 className="title-font text-lg font-medium text-gray-900 mb-3">The 400 Blows</h1>
-            <p className="leading-relaxed mb-3">Photo booth fam kinfolk cold-pressed sriracha leggings jianbing microdosing tousled waistcoat.</p>
-            <div className="flex items-center flex-wrap">
-              <a className="text-indigo-500 inline-flex items-center md:mb-2 lg:mb-0">Learn More
-                <svg className="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M5 12h14"></path>
-                  <path d="M12 5l7 7-7 7"></path>
-                </svg>
-              </a>
-              <span className="text-gray-400 mr-3 inline-flex items-center lg:ml-auto md:ml-0 ml-auto leading-none text-sm pr-3 py-1 border-r-2 border-gray-200">
-                <svg className="w-4 h-4 mr-1" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
-                  <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
-                  <circle cx="12" cy="12" r="3"></circle>
-                </svg>1.2K
-              </span>
-              <span className="text-gray-400 inline-flex items-center leading-none text-sm">
-                <svg className="w-4 h-4 mr-1" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
-                  <path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"></path>
-                </svg>6
-              </span>
-            </div>
-          </div>
-        </div>
+      <div class="xl:w-1/3 lg:w-1/2 md:w-full px-8 py-4 border-l-2 border-gray-200 border-opacity-60">
+      <a className="inline-flex items-center">
+          <img alt="blog" src="caracteristicas2.png" className="w-24 h-12 rounded-full flex-shrink-0 object-cover object-center"></img>
+          <span className="flex-grow flex flex-col">
+            <p className="text-xl -mb-1 title-font text-left font-medium text-white poppins-regular">Comodidad</p>
+            <p className="text-base	mt-1 text-white text-left t poppins-regular">Accede a la app desde cualquier lugar y a cualquier hora.</p>
+          </span>
+        </a>
       </div>
-      <div className="p-4 md:w-1/3">
-        <div className="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
-          <img className="lg:h-48 md:h-36 w-full object-cover object-center" src="https://dummyimage.com/722x402" alt="blog"></img>
-          <div className="p-6">
-            <h2 className="tracking-widest text-xs title-font font-medium text-gray-400 mb-1">CATEGORY</h2>
-            <h1 className="title-font text-lg font-medium text-gray-900 mb-3">Shooting Stars</h1>
-            <p className="leading-relaxed mb-3">Photo booth fam kinfolk cold-pressed sriracha leggings jianbing microdosing tousled waistcoat.</p>
-            <div className="flex items-center flex-wrap ">
-              <a className="text-indigo-500 inline-flex items-center md:mb-2 lg:mb-0">Learn More
-                <svg className="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M5 12h14"></path>
-                  <path d="M12 5l7 7-7 7"></path>
-                </svg>
-              </a>
-              <span className="text-gray-400 mr-3 inline-flex items-center lg:ml-auto md:ml-0 ml-auto leading-none text-sm pr-3 py-1 border-r-2 border-gray-200">
-                <svg className="w-4 h-4 mr-1" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
-                  <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
-                  <circle cx="12" cy="12" r="3"></circle>
-                </svg>1.2K
-              </span>
-              <span className="text-gray-400 inline-flex items-center leading-none text-sm">
-                <svg className="w-4 h-4 mr-1" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
-                  <path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"></path>
-                </svg>6
-              </span>
-            </div>
-          </div>
-        </div>
+      <div class="xl:w-1/3 lg:w-1/2 md:w-full px-8 py-4 border-l-2 border-gray-200 border-opacity-60">
+      <a className="inline-flex items-center">
+          <img alt="blog" src="caracteristicas3.png" className="w-24 h-12 rounded-full flex-shrink-0 object-cover object-center"></img>
+          <span className="flex-grow flex flex-col">
+            <p className="text-xl -mb-1 title-font text-left font-medium text-white poppins-regular">Seguridad</p>
+            <p className="text-base	mt-1 text-white text-left t poppins-regular">Paga con tarjeta de forma segura y sin efectivo.</p>
+          </span>
+        </a>
       </div>
     </div>
   </div>
+</section>
+
+<section className="m-20 ext-gray-600 body-font">
+<h1 class="sm:text-5xl text-7xl font-medium title-font mt-4 text-center poppins-bold text-dark-color">Canchas disponibles</h1>
+  <div className="containe py-12">
+  
+    <div className="flex flex-wrap -mx-4 -mb-10 text-center">
+      <div className="shadow-lg rounded-b-2xl sm:w-1/3 mb-10 box-border h120 w-32">
+        <div className="rounded-lg grid place-items-center overflow-hidden">
+          <img alt="content" className="object-cover object-center h-full w-96 " src="cancha.png"></img>
+        </div>
+        <h2 className="title-font text-2xl font-medium text-gray-900 mt-6 mb-3 poppins-semibold">Bernabeu</h2>
+        <h3 className="leading-relaxed text-base text-primary poppins-medium bg-dark-color bg-opacity-10 mb-2">Valor:<span className="poppins-regular text-dark-color"> $100.000</span></h3>
+        <a className="inline-flex items-center">
+              <img alt="blog" src="ubicacion.png" className="w-8 h-8 rounded-full flex-shrink-0 object-cover object-center"></img>
+              <span className="flex-grow flex flex-col pl-3">
+                <span className="title-font font-medium text-gray-900 poppins-regular">Armenia - Quindio</span>
+              </span>
+            </a>
+        <button className="flex mx-auto mt-2 text-white bg-gradient-to-r rounded-3xl from-primary to-secundary border-0 py-1 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg poppins-regular">Reserva ahora</button>
+      </div>
+
+      <div className="shadow-lg rounded-b-2xl sm:w-1/3 mb-10 box-border h120 w-32">
+        <div className="rounded-lg grid place-items-center overflow-hidden">
+          <img alt="content" className="object-cover object-center h-full w-96 " src="cancha.png"></img>
+        </div>
+        <h2 className="title-font text-2xl font-medium text-gray-900 mt-6 mb-3 poppins-semibold">Bernabeu</h2>
+        <h3 className="leading-relaxed text-base text-primary poppins-medium bg-dark-color bg-opacity-10 mb-2">Valor:<span className="poppins-regular text-dark-color"> $100.000</span></h3>
+        <a className="inline-flex items-center">
+              <img alt="blog" src="ubicacion.png" className="w-8 h-8 rounded-full flex-shrink-0 object-cover object-center"></img>
+              <span className="flex-grow flex flex-col pl-3">
+                <span className="title-font font-medium text-gray-900 poppins-regular">Armenia - Quindio</span>
+              </span>
+            </a>
+        <button className="flex mx-auto mt-2 text-white bg-gradient-to-r rounded-3xl from-primary to-secundary border-0 py-1 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg poppins-regular">Reserva ahora</button>
+      </div>
+
+      <div className="shadow-lg rounded-b-2xl sm:w-1/3 mb-10 box-border h120 w-32">
+        <div className="rounded-lg grid place-items-center overflow-hidden">
+          <img alt="content" className="object-cover object-center h-full w-96 " src="cancha.png"></img>
+        </div>
+        <h2 className="title-font text-2xl font-medium text-gray-900 mt-6 mb-3 poppins-semibold">Bernabeu</h2>
+        <h3 className="leading-relaxed text-base text-primary poppins-medium bg-dark-color bg-opacity-10 mb-2">Valor:<span className="poppins-regular text-dark-color"> $100.000</span></h3>
+        <a className="inline-flex items-center">
+              <img alt="blog" src="ubicacion.png" className="w-8 h-8 rounded-full flex-shrink-0 object-cover object-center"></img>
+              <span className="flex-grow flex flex-col pl-3">
+                <span className="title-font font-medium text-gray-900 poppins-regular">Armenia - Quindio</span>
+              </span>
+            </a>
+        <button className="flex mx-auto mt-2 text-white bg-gradient-to-r rounded-3xl from-primary to-secundary border-0 py-1 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg poppins-regular">Reserva ahora</button>
+      </div>
+
+      
+      
+    </div>
+  </div>
+
+  
 </section>
     </div>
   )
