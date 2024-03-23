@@ -4,16 +4,9 @@ import User from '../models/user';
 import jwt from 'jsonwebtoken'
 
 
-// export const signUp = (req: Request, res: Response) =>{
-//     res.json('signup')
-// }
-
-// export const signIn = (req: Request, res: Response) =>{
-    
-// }
 
 //Register
-
+//Create the user in the database - Creamos el usuario en la bd
 export const createUser = async (req: Request, res: Response) => {
     const { username, password, email, phone } = req.body;
 
@@ -61,9 +54,7 @@ export const createUser = async (req: Request, res: Response) => {
 
 }
 
-
 //Login
-
 export const loginUser = async(req: Request, res: Response) => {
     const { username, password } = req.body;
 

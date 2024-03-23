@@ -8,7 +8,7 @@ const router = Router();
 router.post('/', createField)
 
 //Get all fields - Obtener todos las canchas
-router.get('/', validateToken,getField)
+router.get('/',validateToken, getField)
 
 //Get field by id - obtener la cancha por id
 router.get('/:field_id', getFieldById)

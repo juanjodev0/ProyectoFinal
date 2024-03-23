@@ -1,7 +1,7 @@
 import { Request, Response } from 'express'
 import Field  from '../models/field'
 
-
+//Create the soccer field in the database - Creamos la cancha en la bd
 export const createField = async(req: Request, res: Response) => {
 
     const { field_name, surface_type, price_per_hour, available_hours, image_field } = req.body;
@@ -40,16 +40,22 @@ export const getField = async (req: Request, res: Response) => {
 }
 
 
-//we obtain fields for the id - obtenemos canchas por el id
+//We obtain fields for the id - Obtenemos canchas por el id
 export const getFieldById = async (req: Request, res: Response) => {
-    const { field_id } = req.params
-    const field = await Field.findByPk( field_id )
+    try {
+        const { field_id } = req.params
+        const field = await Field.findByPk( field_id )
 
-    if(field){
-        res.send(field)
-    }else {
+        if(field){
+            res.send(field)
+        }else {
+            res.status(404).json({
+                msg: `Field ${ field_id } Not found`
+            })
+        }
+    } catch (error) {
         res.status(404).json({
-            msg: `Field ${ field_id } Not found`
+            msg: `Field Not found`
         })
     }
 }
@@ -81,6 +87,20 @@ export const updateFieldById = async(req: Request, res: Response) => {
 
 
 //Delete the soccer field - Eliminar la cancha de fútbol
-export const deleteFieldById = (req: Request, res: Response) => {
-    
+export const deleteFieldById = async(req: Request, res: Response) => {
+    try {
+        const { field_id } = req.params
+        await Field.destroy({
+            where: {
+                field_id
+            }
+        })
+        res.status(200).json({
+            msg: `OK`
+        })
+        } catch (error) {
+        res.status(404).json({
+            message:`ups could not delete the field`
+        })
+    }
 }

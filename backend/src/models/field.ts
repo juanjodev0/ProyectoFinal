@@ -1,5 +1,6 @@
 import { DataTypes } from 'sequelize'
 import sequelize from '../db/connection'
+import Reservation from './reservation';
 
 const Field = sequelize.define('fields', {
     field_id:{
@@ -26,7 +27,10 @@ const Field = sequelize.define('fields', {
         allowNull: true,
     }
 }, {
+    modelName: 'Field',
     timestamps: true,
 })
+
+Field.hasMany(Reservation, { foreignKey: 'field_id' });
 
 export default Field;
