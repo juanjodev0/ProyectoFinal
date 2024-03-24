@@ -1,0 +1,30 @@
+label{
+    font-weight: bold;
+}
+
+.reservation-details__input {
+    background-color: #efefef;
+    border: 1px solid #cacaca;
+}
+
+@media screen and (max-width: 1000px) {
+    .vs{
+        display: flex;
+        justify-content: center;
+        align-content: center;
+    }
+
+    .titulo{
+        display: flex;
+        justify-content: center;
+        align-content: center;
+    }
+  }
+
+  @media screen and (max-width: 900px) {
+    .container-form{
+        flex-direction: column;
+        align-content: center;
+        justify-content: center;
+    }
+  }
