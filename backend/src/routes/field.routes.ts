@@ -1,5 +1,5 @@
 import { Router } from 'express'
-import { createField, getField, getFieldById, updateFieldById, deleteFieldById } from '../controllers/field.controller'
+import { createField, getFields, getFieldById, updateFieldById, deleteFieldById } from '../controllers/field.controller'
 import validateToken from './validate.routes'
 const router = Router();
 
@@ -8,7 +8,7 @@ const router = Router();
 router.post('/', createField)
 
 //Get all fields - Obtener todos las canchas
-router.get('/',validateToken, getField)
+router.get('/',validateToken, getFields)
 
 //Get field by id - obtener la cancha por id
 router.get('/:field_id', getFieldById)

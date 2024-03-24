@@ -17,7 +17,7 @@ export const createField = async(req: Request, res: Response) => {
         })
     
         res.json({
-            msg: `User ${field_name} created`
+            msg: `Field ${field_name} created`
         })
     } catch (error) {
         res.status(400).json({
@@ -28,7 +28,7 @@ export const createField = async(req: Request, res: Response) => {
 }
 
 //Obtain all the fields - Obtener todas las canchas
-export const getField = async (req: Request, res: Response) => {
+export const getFields = async (req: Request, res: Response) => {
     try {
         const listFields = await Field.findAll();
         res.json(listFields)
