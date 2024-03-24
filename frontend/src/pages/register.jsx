@@ -1,4 +1,40 @@
 const Register = () => {
+  //hock
+  useEffect(() => {
+    const handleEvent = (event)=>{
+        event.preventDefault();
+        const data = Object.fromEntries(new FormData(event.target));
+        let valores = Object.values(data);
+        console.log(valores);
+
+        try{
+            const envioApi = async () => {
+                const response = await axios.post('http://localhost:4000/api/users', {
+                "id": 0,
+                "usuario" : valores,
+                "password" : valores,
+                "correo electronico" : valores,
+                "telefono" : valores,
+                } )
+                console.log(response);
+            }            
+            envioApi();
+        } catch (err){
+            console.error('ocurrio un error enviando los datos');
+        }
+
+
+    };
+
+    const formulario = document.querySelector("#formulario-equipos");
+
+    formulario.addEventListener("submit", handleEvent);
+
+    return () => {
+        formulario.removeEventListener('submit', handleEvent);
+    };
+        }, []);
+
     return (
       <div>
         <section className="text-gray-600 body-font">
@@ -8,18 +44,24 @@ const Register = () => {
     
     <div className=" flex flex-col lg:m-24 h-220 w-100 shadow-lg rounded-b-2xl pb-10">
     <img className="w-80 object-cover object-center place-items-center flex mx-auto" src="logo-negro.png" alt="logo Goat"></img>
+    <form id='register-form'>
       <div className="relative mb-4 lg:mx-40">
-        <label for="full-name" className="leading-7 text-sm text-gray-600">Nombre:</label>
+        <label for="full-name" className="leading-7 text-sm text-gray-600">Nombre de usuario:</label>
         <input type="text" id="full-name" name="full-name" className="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"></input>
-      </div>
-      <div className="relative mb-4 lg:mx-40 sm:mx20">
-        <label for="email" className="leading-7 text-sm text-gray-600">Usuario:</label>
-        <input type="email" id="email" name="email" className="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"></input>
       </div>
       <div className="relative mb-4 lg:mx-40 sm:mx20">
         <label for="email" className="leading-7 text-sm text-gray-600">Contraseña:</label>
         <input type="email" id="email" name="email" className="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"></input>
       </div>
+      <div className="relative mb-4 lg:mx-40 sm:mx20">
+        <label for="email" className="leading-7 text-sm text-gray-600">Correo electrónico:</label>
+        <input type="email" id="email" name="email" className="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"></input>
+      </div>
+      <div className="relative mb-4 lg:mx-40 sm:mx20">
+        <label for="email" className="leading-7 text-sm text-gray-600">Teléfono:</label>
+        <input type="email" id="email" name="email" className="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"></input>
+      </div>
+      </form>
       <button className="flex mx-auto mt-2 text-white bg-gradient-to-r rounded-3xl from-primary to-secundary border-0 py-1 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg poppins-regular">Registrarse</button>
     </div>
     </div>
