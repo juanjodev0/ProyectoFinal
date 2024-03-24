@@ -1,6 +1,7 @@
 import { Router } from 'express'
 import { createFeedback, getFeedbacks, getFeedbackById, updateFeedbackById, deleteFeedbackById } from '../controllers/feedback.controller'
 import validateToken from './validate.routes'
+import { isAdmin } from '../controllers/auth.controller';
 const router = Router();
 
 

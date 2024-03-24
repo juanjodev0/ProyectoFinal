@@ -7,7 +7,7 @@ router.post('/',validateToken, createReservation)
 router.get('/', getReservations)
 router.get('/:reservation_id', getReservationById)
 router.put('/:reservation_id', updateReservationById)
-router.delete('/:reservation_id', deleteReservationById)
+router.delete('/:reservation_id', validateToken, deleteReservationById)
 
 
 export default router;

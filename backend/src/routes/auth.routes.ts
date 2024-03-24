@@ -1,13 +1,14 @@
 import { Router } from 'express'
 const router = Router();
 
-import { loginUser, createUser }  from '../controllers/auth.controller'
+import { loginUser, createUser, isAdmin }  from '../controllers/auth.controller'
 
 //Create users - Crear usuarios
-router.post('/', createUser)
+router.post('/admin', createUser)
 
-//Loggin users - Loguear usuarios
-router.post('/login', loginUser)
+
+//Loggin users and admin - Loguear usuarios y administrador
+router.post('/login', loginUser, isAdmin)
 
 
 export default router;
