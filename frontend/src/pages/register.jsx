@@ -1,3 +1,6 @@
+import { useEffect } from "react";
+import axios from 'axios';
+
 const Register = () => {
   //hock
   useEffect(() => {
@@ -11,10 +14,10 @@ const Register = () => {
             const envioApi = async () => {
                 const response = await axios.post('http://localhost:4000/api/users', {
                 "id": 0,
-                "usuario" : valores,
-                "password" : valores,
-                "correo electronico" : valores,
-                "telefono" : valores,
+                "username" : valores[0],
+                "password" : valores[1],
+                "email" : valores[2],
+                "phone" : valores[3],
                 } )
                 console.log(response);
             }            
@@ -26,14 +29,14 @@ const Register = () => {
 
     };
 
-    const formulario = document.querySelector("#formulario-equipos");
+    const formulario = document.querySelector("#register-form");
 
     formulario.addEventListener("submit", handleEvent);
 
     return () => {
         formulario.removeEventListener('submit', handleEvent);
     };
-        }, []);
+    },[]);
 
     return (
       <div>
@@ -50,19 +53,19 @@ const Register = () => {
         <input type="text" id="full-name" name="full-name" className="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"></input>
       </div>
       <div className="relative mb-4 lg:mx-40 sm:mx20">
-        <label for="email" className="leading-7 text-sm text-gray-600">Contraseña:</label>
-        <input type="email" id="email" name="email" className="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"></input>
+        <label for="pass" className="leading-7 text-sm text-gray-600">Contraseña:</label>
+        <input type="password" id="pass" name="pass" className="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"></input>
       </div>
       <div className="relative mb-4 lg:mx-40 sm:mx20">
         <label for="email" className="leading-7 text-sm text-gray-600">Correo electrónico:</label>
         <input type="email" id="email" name="email" className="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"></input>
       </div>
       <div className="relative mb-4 lg:mx-40 sm:mx20">
-        <label for="email" className="leading-7 text-sm text-gray-600">Teléfono:</label>
-        <input type="email" id="email" name="email" className="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"></input>
+        <label for="phone" className="leading-7 text-sm text-gray-600">Teléfono:</label>
+        <input type="text" id="phone" name="phone" className="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"></input>
       </div>
+      <button type="submit" className="flex mx-auto mt-2 text-white bg-gradient-to-r rounded-3xl from-primary to-secundary border-0 py-1 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg poppins-regular">Registrarse</button>
       </form>
-      <button className="flex mx-auto mt-2 text-white bg-gradient-to-r rounded-3xl from-primary to-secundary border-0 py-1 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg poppins-regular">Registrarse</button>
     </div>
     </div>
     <div className="bg-gradient-to-r pt-10 from-secundary to-primary flex justify-center lg:w-3/3 md:w-1/2 md:pr-16 lg:pr-0 pr-0">
