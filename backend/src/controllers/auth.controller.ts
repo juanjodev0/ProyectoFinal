@@ -60,7 +60,7 @@ export const loginUser = async(req: Request, res: Response) => {
 
     //Validate if the user exists in the database - Validamos si el usuario existe en la base de datos
     const user: any = await User.findOne({ where: { username: username }});
-
+    
     if(!user){
         return res.status(400).json({
             msg: `There is no user with the name ${ username }`
@@ -80,7 +80,7 @@ export const loginUser = async(req: Request, res: Response) => {
     //Generate token - Generamos token
 
     const token = jwt.sign({
-        username: username
+        user: user
     },process.env.SECRET_KEY || 'pizza456');
 
     res.json(token)
