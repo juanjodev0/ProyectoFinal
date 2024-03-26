@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
 
 const SoccerField = () => {
-  const { productId } = useParams();
     
   // Hook
   // const [field, setField] = useState();
@@ -76,7 +75,7 @@ const SoccerField = () => {
                 <span className="title-font font-medium text-gray-900 poppins-regular">Armenia - Quindio</span>
               </span>
             </a>
-        <Link to="/reservation-form">
+        <Link to={`/reservation-form/${field}/${fieldInfo.field_name}`}>
           <button className="flex mx-auto mt-2 text-white bg-gradient-to-r rounded-3xl from-primary to-secundary border-0 py-1 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg poppins-regular">Reserva ahora</button>
         </Link>
         </div>
