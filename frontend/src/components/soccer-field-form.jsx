@@ -1,6 +1,6 @@
 import React from 'react';
 import { useEffect } from "react";
-import axios from 'axios';
+import axios from '../axios/axios.js';
 import '../styles/soccer-field-form.css';
 import logoGoat from '../../public/logo-goat.png';
 

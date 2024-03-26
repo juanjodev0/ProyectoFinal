@@ -5,12 +5,12 @@ const Footer = () => {
         <div className="container px-5  mx-auto">
     <div class="text-center justify-center flex flex-wrap -m-4">
       <div class="p-4 lg:w-1/3 flex justify-center">
-      <img className="w-80 w-10" src="imagotipo-blanco.png" alt="logo Goat"></img>
+      <img className="w-80 w-10" src="../../public/imagotipo-blanco.png" alt="logo Goat"></img>
       </div>
       <div className="p-4 lg:w-1/3">
         <div className="h-full bg-opacity-75 px-8 pt-20 pb-24 rounded-lg overflow-hidden text-center relative">
         <a className="inline-flex items-center">
-          <img alt="blog" src="caracteristicas1.png" className="w-24 h-12 rounded-full flex-shrink-0 object-cover object-center"></img>
+          <img alt="blog" src="../../public/caracteristicas1.png" className="w-24 h-12 rounded-full flex-shrink-0 object-cover object-center"></img>
           <span className="flex-grow flex flex-col">
             <p className="text-xl title-font text-left font-medium text-white">Rapidez</p>
             <p className="text-base	text-white text-left t">Reserva tu cancha en segundos,<br></br>

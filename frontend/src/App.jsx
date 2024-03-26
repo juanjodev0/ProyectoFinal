@@ -27,7 +27,7 @@ function App() {
                 <Route path='/register-soccer-field' element={<RegisterSoccerField></RegisterSoccerField>}></Route>
                 <Route path='/reservation-details' element={<ReservationDetails></ReservationDetails>}></Route>
                 <Route path='/reservation-form' element={<ReservationForm></ReservationForm>}></Route>
-                <Route path='/soccer-field' element={<SoccerField></SoccerField>}></Route>
+                <Route path='/soccer-field/:field' element={<SoccerField></SoccerField>}></Route>
               </Routes>
             </BrowserRouter>
           <Footer></Footer>

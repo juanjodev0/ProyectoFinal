@@ -1,5 +1,6 @@
 import { useEffect } from "react";
-import axios from 'axios';
+import axios from '../axios/axios.js';
+import { Link } from 'react-router-dom';
 
 const Login = () => {
 
@@ -18,12 +19,20 @@ const Login = () => {
                 "password" : valores[1],
                 })
                 console.log(response);
+
+                // Obtener el token de autenticación de la respuesta
+                const token = response.data;
+
+                // Almacenar el token en el localStorage
+                localStorage.setItem('authToken', token);
             }
             envioApi();
         } catch (err){
             console.error('ocurrio un error enviando los datos');
+        } finally {
+        // Limpiar el formulario después de enviar
+        event.target.reset();
         }
-
 
     };
 
@@ -54,7 +63,9 @@ const Login = () => {
               <label for="pass" className="leading-7 text-sm text-gray-600">Contraseña</label>
               <input type="password" id="pass" name="pass" className="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"></input>
             </div>
-            <button type="submit" className="flex mx-auto mt-2 text-white bg-gradient-to-r rounded-3xl from-primary to-secundary border-0 py-1 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg poppins-regular">Iniciar Sesion</button>
+            {/* <Link to='/'> */}
+              <button type="submit" className="flex mx-auto mt-2 text-white bg-gradient-to-r rounded-3xl from-primary to-secundary border-0 py-1 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg poppins-regular">Iniciar Sesion</button>
+            {/* </Link> */}
             </form>
             <h3 className="flex mx-auto mt-2 leading-relaxed text-base text-primary poppins-medium mb-2">Registrarse</h3>
           </div>

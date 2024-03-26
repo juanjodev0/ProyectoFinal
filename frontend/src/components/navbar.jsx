@@ -10,7 +10,7 @@ const NavBar = () => {
   <div className="drop-shadow-lg container mx-auto flex flex-wrap p-2 pt-3 flex-col md:flex-row items-center">
     <a className="flex title-font font-medium items-center text-gray-900 lg:mb-4 md:mb-0">
      
-      <img className="w-28 lg:ml-36 w-10" src="logo.png" alt="logo Goat"></img>
+      <img className="w-28 lg:ml-36 w-10" src="../../public/logo.png" alt="logo Goat"></img>
     </a>
     <nav className="md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center">
       
